@@ -56,11 +56,8 @@ class Landing extends Component {
 
 
     render() {
-        let userPic = this.state.allData.filter(u => u.username == localStorage.getItem("username")).map(p => p.profilePic)
+        let userPic = this.props.allData.filter(u => u.username == localStorage.getItem("username")).map(p => p.profilePic)
         let data = this.state.allData
-        let i = data.findIndex(u => u.username == localStorage.getItem('username'))
-        if(i > -1) data.splice(i,1)
-        console.log(data)
         let searchdata = data.filter(r => r.username.toLowerCase().includes(this.state.searchPut))
 
         return (

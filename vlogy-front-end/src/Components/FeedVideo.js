@@ -46,7 +46,6 @@ class Videos extends Component {
     }
 
     render() {
-        console.log(this.props.users)
         let vid = this.props.vid
 
         let touser = `/user/${vid.user.username}`

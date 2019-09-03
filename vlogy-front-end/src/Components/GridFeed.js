@@ -50,7 +50,7 @@ class GridFeed extends Component {
 
             <div className='video-cont4'>
                 { <a href={touser}>
-                    <video className="videossss4" width="450" height="350" controls>
+                    <video className="videossss4" width="330" height="230" controls>
 
                         <source src={`http://localhost:5000/video/${vid.id}`} />
                     </video>

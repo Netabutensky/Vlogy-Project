@@ -57,7 +57,7 @@ class Login extends Component {
         return (
             <div >
                 <div class="login">
-                    <input type="text" value={this.state.username} onChange={this.handleUserName} placeholder="User name" id="username" />
+                    <input type="text" value={this.state.username} onChange={this.handleUserName} placeholder="Username" id="username" />
                     <input type="password" value={this.state.password} onChange={this.handlePassword} placeholder="Password" id="password" />
 
                   <button  onClick={this.UserExict} className="submit" type='submit'> LogIn <i class="far fa-hand-spock"></i></button>

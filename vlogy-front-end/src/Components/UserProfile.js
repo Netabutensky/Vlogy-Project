@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import feed from './Feed'
 import Login from './Login';
-import Video from './Video'
+import Video from './Video';
+
 
 class UserProfile extends Component {
     constructor() {
@@ -186,6 +187,7 @@ class UserProfile extends Component {
     render() {
         // console.log(this.props.allData.filter(u => u.username == localStorage.getItem("username")).map(r => r.about))
         let userPic = this.props.allData.filter(u => u.username == localStorage.getItem("username")).map(p => p.profilePic)
+        console.log(userPic)
         // console.log(this.props.allData.filter(u => u.username == localStorage.getItem("username")).map(p => p.following)[0])
         return (
 
@@ -211,10 +213,10 @@ class UserProfile extends Component {
 
                         {this.state.showupload ?
                             <div><div onClick={this.showupload} ><li class="fas fa-video"></li></div>
-                                <div className="uploadcontainer">
+                                <div className="uploadcontainer2">
                                     <input className="inputupload" type='file' ref={this.state.file} />
                                     <button className="uploadbutton" onClick={this.handleUploadFile} >upload</button>
-                                </div> </div> :
+                                </div></div> :
                             <div onClick={this.showupload} ><li class="fas fa-video"></li></div>}
 
                         <form >

@@ -58,6 +58,7 @@ class Feed extends Component {
 
     getFeed = async () => {
         let videos = await axios.get('http://localhost:5000/feed')
+        console.log(videos)
         let feed = videos.data.filter(o => o.user.username !== localStorage.getItem("username"))
         this.setState({ data: feed })
     }
@@ -72,7 +73,6 @@ class Feed extends Component {
 
 
     comment = (data) => {
-        console.log(data)
         axios.put('http://localhost:5000/addComment', data)
             .then((response) => {
                 console.log(response)
@@ -103,14 +103,12 @@ class Feed extends Component {
     }
 
     render() {
-        console.log(this.state.data)
         let scroll=this.scrolltop
         return (
             <Router>
                 <div className='feed'>
                    
                     <span className="myfeed">Feed</span>
-                    {/* <Route path="/gridfeed" exact render={() => this.state.data.map(v =><GridFeed  deleteComment ={this.deleteComment} likeVid ={this.likeVid} vid ={v} UserData={this.state.UserData} date={v.user.uploads[0].date[0]} comment = {this.comment}  />)} /> */}
 
                     <div className="grid"> <a href='/gridfeed' ><i class="fas fa-th-large"></i></a></div>
 

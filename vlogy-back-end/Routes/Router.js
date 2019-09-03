@@ -91,6 +91,7 @@ router.get('/feed', (req, res) =>{
         })
       }
     }
+    console.log(videos)
     res.send(videos)
   })
 })
